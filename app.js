@@ -6,10 +6,10 @@ require("dotenv").config();
 
 // middleware
 const corsOptions = {
-    origin: "http://localhost:3000" // frontend URI (ReactJS)
-    /*origin: "https://todo-backend.vercel.app",
+    //origin: "http://localhost:3000" // frontend URI (ReactJS)
+    origin: "https://todo-backend.vercel.app",
     methods: ["POST","GET"],
-    credentials: true*/
+    credentials: true
 }
 app.use(express.json());
 app.use(cors(corsOptions));
