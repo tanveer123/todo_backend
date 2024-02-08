@@ -29,5 +29,4 @@ app.listen(PORT, () => {
 })
 // route
 app.get("/", (req, res) => {
-    res.status(201).json({ message: "Connected to Backend!" });
 });
