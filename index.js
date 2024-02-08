@@ -28,5 +28,5 @@ app.listen(PORT, () => {
     console.log(`App is Listening on PORT ${PORT}`);
 })*/
 // route
-app.get("/", (req, res) => {res.status(201).json({ message: " yes , Connected to Backend!" });
+app.get("/", (req, res) => {res.status(201).json({ message: " yes , Backend!" });
 });
