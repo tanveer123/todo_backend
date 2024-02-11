@@ -7,7 +7,7 @@ require("dotenv").config();
 // middleware
 const corsOptions = {
     //origin: "http://localhost:3000" // frontend URI (ReactJS)
-    origin: "https://todo-backend-eta-three.vercel.app",
+    origin: "https://todo-frontend-pearl-one.vercel.app",
     methods: ["POST","GET"],
     credentials: true
 }
@@ -29,6 +29,6 @@ app.listen(PORT, () => {
 })*/
 // route
 app.get("/", (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Origin', 'https://todo-frontend-pearl-one.vercel.app');
     res.status(201).json({ message: "Connected to Backend!" });
 });
