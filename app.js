@@ -29,6 +29,6 @@ app.listen(PORT, () => {
 })*/
 // route
 app.get("/", (req, res) => {
-    res.set('Access-Control-Allow-Origin', 'https://todo-frontend-pearl-one.vercel.app');
+    //res.set('Access-Control-Allow-Origin', 'https://todo-frontend-pearl-one.vercel.app');
     res.status(201).json({ message: "Connected to Backend!" });
 });
