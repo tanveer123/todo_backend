@@ -11,28 +11,19 @@ require("dotenv").config();
     methods: ["POST","GET"],
     credentials: true
 }*/
-app.use(express.json());
+
 //app.use(cors(corsOptions));
 
-// Allow CORS middleware
-const allowCors = fn => async (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  );
-  if (req.method === 'OPTIONS') {
-    res.status(200).end();
-    return;
-  }
-  return await fn(req, res);
-};
+const corsConf = {
+  origin: "*",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+}
 
-// Apply CORS middleware to all routes
-app.use(allowCors);
+app.use(cors(corsConf));
 
+app.use(express.json());
 
 // connect MongoDB
 mongoose.connect(process.env.MONGODB_URI).then(() => {
