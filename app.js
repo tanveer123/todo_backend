@@ -29,5 +29,6 @@ app.listen(PORT, () => {
 })*/
 // route
 app.get("/", (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     res.status(201).json({ message: "Connected to Backend!" });
 });
