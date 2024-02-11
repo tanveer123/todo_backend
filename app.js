@@ -5,14 +5,14 @@ const cors = require("cors");
 require("dotenv").config();
 
 // middleware
-const corsOptions = {
+/*const corsOptions = {
     //origin: "http://localhost:3000" // frontend URI (ReactJS)
     origin: "https://todo-frontend-pearl-one.vercel.app",
     methods: ["POST","GET"],
     credentials: true
-}
+}*/
 app.use(express.json());
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
 // connect MongoDB
 mongoose.connect(process.env.MONGODB_URI).then(() => {
