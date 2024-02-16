@@ -44,5 +44,5 @@ app.listen(PORT, () => {
 app.get("/", async (req, res) => {
     const todos = await Todo.find();
     res.json(todos);
-    res.status(201).json({ data: todos });
+    res.status(201).json({ data: PORT });
 });
