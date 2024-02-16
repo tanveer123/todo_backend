@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
+let Todo = require('./Todo');
 require("dotenv").config();
 
 // middleware
@@ -40,5 +41,8 @@ app.listen(PORT, () => {
     console.log(`App is Listening on PORT ${PORT}`);
 })
 // route
-app.get("/", (req, res) => {res.status(201).json({ message: " yes , Backend!" });
+app.get("/", (req, res) => {
+    const todos = await Todo.find();
+    res.json(todos);
+    res.status(201).json({ message: todos });
 });
