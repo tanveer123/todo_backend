@@ -41,7 +41,7 @@ app.listen(PORT, () => {
     console.log(`App is Listening on PORT ${PORT}`);
 })
 // route
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
     const todos = await Todo.find();
     res.json(todos);
     res.status(201).json({ message: todos });
