@@ -6,23 +6,23 @@ let Todo = require('./Todo');
 require("dotenv").config();
 
 // middleware
-/*const corsOptions = {
+const corsOptions = {
     //origin: "http://localhost:3000" // frontend URI (ReactJS)
     origin: "https://todo-frontend-pearl-one.vercel.app",
     methods: ["POST","GET"],
     credentials: true
-}*/
+}
 
-//app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-const corsConf = {
+/*const corsConf = {
   origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204
 }
 
-app.use(cors(corsConf));
+app.use(cors(corsConf));*/
 
 app.use(express.json());
 
