@@ -45,6 +45,6 @@ app.listen(PORT, () => {
 // route
 app.get("/", async (req, res) => {
     const todos = await Todo.find();
-    res.json(todos);
+    //res.json(todos);
     res.status(201).json({ data: PORT });
 });
