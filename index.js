@@ -36,10 +36,12 @@ mongoose.connect(process.env.MONGODB_URI).then(() => {
 }).catch(err => {
     console.log(err);
 });
+
 const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
     console.log(`App is Listening on PORT ${PORT}`);
 })
+
 // route
 app.get("/", async (req, res) => {
     const todos = await Todo.find();
